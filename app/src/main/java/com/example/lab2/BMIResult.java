@@ -17,7 +17,7 @@ public class BMIResult extends AppCompatActivity {
     //variables
     double weight, height;
     Button Finishbutton;
-    TextView TxtAns;
+    TextView TxtAns, TxtResult;
     ImageView bmiArrow;
     float Answer;
     @Override
@@ -28,13 +28,28 @@ public class BMIResult extends AppCompatActivity {
         Bundle details = getIntent().getExtras();
         weight = details.getFloat("weight");
         height = details.getFloat("height");
+
+        //finding views
         TxtAns = findViewById(R.id.BMIAnswer);
         bmiArrow = findViewById(R.id.bmiArrow);
+        TxtResult = findViewById(R.id.BmiResult);
 
         Answer = (float) (weight /  (height*height) * 10000);
 
-        TxtAns.setText(String.valueOf(Answer));
+        //Formatting to 2 decimal places
+        String formattedAns = String.format("%.2f", Answer);
 
+        TxtAns.setText((formattedAns));
+
+        if (Answer < 18.5){
+            TxtResult.setText("UnderWeight");
+        } else if (Answer > 24.9) {
+            TxtResult.setText("Overweight");
+        }else{
+            TxtResult.setText("Normal");
+        }
+
+        //Adjusting the arrow according to the answer.
 
         //range of the bmi
         float minBMI = 10F;
@@ -62,6 +77,7 @@ public class BMIResult extends AppCompatActivity {
             {
                 Intent Return = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(Return);
+
             }
         });
     }

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="73dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="96dp"
         android:text="BMI Calculator"
         android:textSize="30sp"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="161dp"
-        android:layout_marginBottom="260dp"
+        android:layout_marginBottom="292dp"
         android:text="Calculate"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -39,29 +39,28 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="161dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="192dp"
         android:onClick="Clear"
         android:text="Reset"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/enterWeight"
         android:layout_width="256dp"
         android:layout_height="66dp"
-        android:layout_marginTop="172dp"
         android:ems="10"
-        android:inputType="number"
         android:hint="Enter Weight(KG)"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.003" />
+        app:layout_constraintVertical_bias="0.13" />
 
     <EditText
         android:id="@+id/enterHeight"
@@ -69,12 +68,24 @@
         android:layout_height="66dp"
         android:layout_marginTop="172dp"
         android:ems="10"
-        android:inputType="number"
         android:hint="Enter Height(CM)"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212" />
+        app:layout_constraintVertical_bias="0.032" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.401" />
 </androidx.constraintlayout.widget.ConstraintLayout>
